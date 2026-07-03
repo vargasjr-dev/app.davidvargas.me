@@ -46,7 +46,9 @@ const PublicPage: React.FC<{
         <hr className="border-gray-400" />
         <div className="flex mt-4">
           <div className="w-1/3 text-gray-400 text-xs">
-            <p>© {new Date().getFullYear()} Vargas Arts, LLC</p>
+            <p>
+              © {new Date().getFullYear()} VargasJR LLC. All rights reserved.
+            </p>
           </div>
           <div className="w-2/3">
             <h6 className="text-xl font-bold mb-8">Site Links</h6>
@@ -61,7 +63,7 @@ const PublicPage: React.FC<{
                     {l}
                   </a>
                 </p>
-              )
+              ),
             )}
           </div>
         </div>
