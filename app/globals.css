@@ -1,9 +1,9 @@
 :root {
-  --text: #1a1a1a;
+  --text: #333333;
   --muted: #666;
-  --bg: #ffffff;
-  --link: #0366d6;
-  --border: #e1e4e8;
+  --link: #3ba4dc;
+  --orange: #f7941d;
+  --border: #d8e1e8;
 }
 
 * {
@@ -14,11 +14,14 @@ html,
 body {
   margin: 0;
   padding: 0;
-  background: var(--bg);
   color: var(--text);
-  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Helvetica,
-    Arial, sans-serif;
-  line-height: 1.7;
+  font: 100%/1.75 sans-serif;
+}
+
+body {
+  background: radial-gradient(ellipse 55% 45% at 0px 0px, #3ba4dcc0, transparent),
+    radial-gradient(ellipse 55% 45% at 100% 100%, #f7941dc0, transparent);
+  background-attachment: fixed;
 }
 
 a {
@@ -31,7 +34,7 @@ a:hover {
 }
 
 .site {
-  min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
   max-width: 720px;
@@ -44,7 +47,6 @@ a:hover {
   align-items: center;
   justify-content: space-between;
   padding: 20px 0;
-  border-bottom: 1px solid var(--border);
 }
 
 .nav-brand {
@@ -60,45 +62,116 @@ a:hover {
 
 .main {
   flex: 1;
-  padding: 40px 0 64px;
+  display: flex;
+  flex-direction: column;
+  padding: 24px 0 32px;
 }
 
 .footer {
   padding: 24px 0;
-  border-top: 1px solid var(--border);
   color: var(--muted);
   font-size: 0.85rem;
 }
 
+/* Home: fill exactly the viewport — no scrolling on mobile */
 .hero {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  padding: 64px 0;
+  overflow: hidden;
 }
 
 .hero img {
   width: 160px;
   height: 160px;
   border-radius: 8px;
+  box-shadow: rgb(0 0 0 / 50%) 0px 4px 8px;
 }
 
 .hero h1 {
   font-size: 2.4rem;
-  margin: 24px 0 4px;
+  margin: 24px 0 0;
   font-weight: 700;
 }
 
-.hero h3 {
-  font-weight: 400;
-  color: var(--muted);
-  margin: 0;
-  font-size: 1.2rem;
+.headline-carousel {
+  position: relative;
+  height: 2.1rem;
+  width: 100%;
+  margin: 4px 0 0;
+  overflow: hidden;
 }
 
-.post-list,
-.plain-list {
+.headline-carousel span {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  font-weight: 400;
+  color: var(--muted);
+  font-size: 1.2rem;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.headline-carousel span.active {
+  opacity: 1;
+}
+
+.socials {
+  display: flex;
+  gap: 24px;
+  margin-top: 28px;
+  align-items: center;
+}
+
+.socials a {
+  color: var(--text);
+  display: inline-flex;
+}
+
+.socials a:hover {
+  color: var(--link);
+}
+
+/* Blog */
+h1.page-title {
+  font-size: 2rem;
+  margin-bottom: 24px;
+}
+
+.year-toggle {
+  margin-bottom: 12px;
+}
+
+.year-toggle > summary {
+  cursor: pointer;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text);
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.year-toggle > summary::before {
+  content: "▸";
+  color: var(--muted);
+  transition: transform 0.2s ease;
+  display: inline-block;
+}
+
+.year-toggle[open] > summary::before {
+  transform: rotate(90deg);
+}
+
+.post-list {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 12px 0 0;
 }
 
 .post-list li {
@@ -111,11 +184,7 @@ a:hover {
   font-size: 0.85rem;
 }
 
-h1.page-title {
-  font-size: 2rem;
-  margin-bottom: 24px;
-}
-
+/* Post page */
 .post h1 {
   font-size: 2rem;
   margin-bottom: 4px;
@@ -130,6 +199,8 @@ h1.page-title {
 
 .post img {
   max-width: 100%;
+  box-shadow: rgb(0 0 0 / 50%) 0px 4px 8px;
+  border-radius: 8px;
 }
 
 .post-nav {

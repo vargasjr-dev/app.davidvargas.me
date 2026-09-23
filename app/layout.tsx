@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata = {
   title: "david vargas",
-  description: "Independent Open-Source Engineer",
+  description: "Full-Stack Engineer, Founder, and Open Source believer",
 };
 
 export default function RootLayout({
@@ -20,16 +20,12 @@ export default function RootLayout({
               David Vargas
             </Link>
             <div className="nav-links">
-              <Link href="/projects">Projects</Link>
               <Link href="/blog">Blog</Link>
-              <Link href="/predictions">Predictions</Link>
             </div>
           </nav>
           <main className="main">{children}</main>
           <footer className="footer">
-            <span>
-              © {new Date().getFullYear()} Vargas Arts, LLC
-            </span>
+            <span>© {new Date().getFullYear()} Vargas Jr LLC</span>
           </footer>
         </div>
       </body>
