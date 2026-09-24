@@ -3,9 +3,9 @@
 import { useEffect, useState } from "react";
 
 const PHRASES = [
-  "Founding Full-Stack Engineer",
-  "Founder",
-  "Open Source Engineer",
+  "Evangelist of Personal Intelligence",
+  "Open Source Maximalist",
+  "Tinkerer of Games",
 ];
 
 export default function HeadlineCarousel() {

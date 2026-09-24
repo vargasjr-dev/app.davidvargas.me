@@ -19,8 +19,8 @@ body {
 }
 
 body {
-  background: radial-gradient(ellipse 55% 45% at 0px 0px, #3ba4dcc0, transparent),
-    radial-gradient(ellipse 55% 45% at 100% 100%, #f7941dc0, transparent);
+  background: radial-gradient(ellipse 95% 75% at 0px 0px, #3ba4dcc0, transparent),
+    radial-gradient(ellipse 95% 75% at 100% 100%, #f7941dc0, transparent);
   background-attachment: fixed;
 }
 
@@ -46,13 +46,12 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 0;
+  padding: 16px 0;
 }
 
-.nav-brand {
-  font-weight: 700;
-  color: var(--text);
-  font-size: 1.1rem;
+.nav-brand img {
+  height: 40px;
+  display: block;
 }
 
 .nav-links {
@@ -64,13 +63,31 @@ a:hover {
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 24px 0 32px;
+  padding: 12px 0 24px;
 }
 
 .footer {
-  padding: 24px 0;
+  padding: 16px 0;
   color: var(--muted);
   font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.socials {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.socials a {
+  color: var(--text);
+  display: inline-flex;
+}
+
+.socials a:hover {
+  color: var(--link);
 }
 
 /* Home: fill exactly the viewport — no scrolling on mobile */
@@ -84,16 +101,15 @@ a:hover {
   overflow: hidden;
 }
 
-.hero img {
+.hero-avatar {
   width: 160px;
   height: 160px;
-  border-radius: 8px;
-  box-shadow: rgb(0 0 0 / 50%) 0px 4px 8px;
+  border-radius: 50%;
 }
 
 .hero h1 {
-  font-size: 2.4rem;
-  margin: 24px 0 0;
+  font-size: 2.2rem;
+  margin: 20px 0 0;
   font-weight: 700;
 }
 
@@ -120,26 +136,26 @@ a:hover {
   opacity: 1;
 }
 
-.socials {
-  display: flex;
-  gap: 24px;
-  margin-top: 28px;
-  align-items: center;
+.padawan-note {
+  margin-top: 20px;
+  color: var(--muted);
+  font-size: 0.95rem;
 }
 
-.socials a {
-  color: var(--text);
-  display: inline-flex;
-}
-
-.socials a:hover {
+.padawan-note a {
   color: var(--link);
 }
 
 /* Blog */
-h1.page-title {
+.page-title {
   font-size: 2rem;
-  margin-bottom: 24px;
+  margin: 0 0 16px;
+}
+
+.blog-note {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin: 0 0 24px;
 }
 
 .year-toggle {
@@ -199,7 +215,6 @@ h1.page-title {
 
 .post img {
   max-width: 100%;
-  box-shadow: rgb(0 0 0 / 50%) 0px 4px 8px;
   border-radius: 8px;
 }
 
